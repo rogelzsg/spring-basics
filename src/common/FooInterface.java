@@ -1,4 +1,5 @@
-package example02;
+package common;
+
 
 public interface FooInterface {
 	

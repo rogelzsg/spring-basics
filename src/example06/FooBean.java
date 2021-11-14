@@ -7,6 +7,8 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import common.FooInterface;
+
 public class FooBean implements FooInterface {
 	
 	private List<String> list;

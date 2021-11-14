@@ -18,7 +18,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	
 	<!-- If we use a multiparam constructor, a new 'index' property is needed.
-	This forces us to define ALL the params of a concrete constructor (Spring will sweep
+	This forces us to define ALL the params of a concrete constructor. Spring will sweep
 	in the class for a constructor that matches the same number of params and class types.
 	The other constructors won't be involved (we could add their own injections as well).
 	-->

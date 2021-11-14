@@ -1,5 +1,7 @@
 package example03;
 
+import common.FooInterface;
+
 public class OneParamBean implements FooInterface {
 	
 	private String property01 = "original value01";

@@ -1,5 +1,7 @@
 package example01;
 
+import common.FooInterface;
+
 public class FooBean implements FooInterface {
 
 	@Override

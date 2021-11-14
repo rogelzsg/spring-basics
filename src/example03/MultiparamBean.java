@@ -1,5 +1,7 @@
 package example03;
 
+import common.FooInterface;
+
 public class MultiparamBean implements FooInterface {
 	
 	private String property01 = "original value 1";
