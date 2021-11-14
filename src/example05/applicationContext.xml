@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="fooBean" class="example05.FooBean">
+	
+		<constructor-arg index="0">
+			<list>
+				<value>Spring</value>
+				<value>Summer</value>
+				<value>Fall</value>
+				<value>Winter</value>
+			</list>
+		</constructor-arg>
+		
+		<constructor-arg index="1">
+			<set>
+				<value>Red</value>
+				<value>Orange</value>
+				<value>Blue</value>
+				<value>Purple</value>
+				<value>Rose</value>
+				<value>Green</value>
+				<!-- We add a repeated value to verify that it will be discarded -->
+				<value>Green</value>
+			</set>
+		</constructor-arg>
+		
+		<constructor-arg index="2">
+			<map>
+				<entry key="Spain" value="Madrid"/>
+				<entry key="France" value="Paris"/>
+				<entry key="Germany" value="Berlin"/>
+				<entry key="Italy" value="Roma"/>
+				<entry key="United Kingdom" value="London"/>
+			</map>
+		</constructor-arg>
+		
+		<constructor-arg index="3">
+			<props>
+				<prop key="environment">Development</prop>
+				<prop key="max-connections">3</prop>
+				<prop key="protocol">HTTPS</prop>
+				<prop key="port">443</prop>
+			</props>
+		</constructor-arg>
+		
+	</bean>
+
+
+
+</beans>

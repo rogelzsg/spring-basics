@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- There are three alternatives. We will see them with the multiparam bean: 
+	- a direct value
+	- a ref within the xml
+	- a nested bean which is something pretty equivalent to the ref way -->
+	<bean id="oneParamBean" class="example03.OneParamBean">
+		<constructor-arg value="injected value" />
+	</bean>
+	
+	
+	<!-- If we use a multiparam constructor, a new 'index' property is needed.
+	This forces us to define ALL the params of a concrete constructor (Spring will sweep
+	in the class for a constructor that matches the same number of params and class types.
+	The other constructors won't be involved (we could add their own injections as well).
+	-->
+	<bean id="multiparamBean" class="example03.MultiparamBean">
+		<constructor-arg index="0" value="injected value 1" />
+		<constructor-arg index="1" ref="property02" />
+		<constructor-arg index="2">
+			<bean class="java.lang.String">
+				<constructor-arg value="injected value 3" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="property02" class="java.lang.Integer">
+		<constructor-arg value="1" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+<!-- Notice that we have added the :util namespace along with
+the schema locations -->
+
+	<bean id="fooBean" class="example06.FooBean">
+		<constructor-arg index="0" ref="list" />
+		<constructor-arg index="1" ref="set" />
+		<constructor-arg index="2" ref="map"/>
+		<constructor-arg index="3" ref="properties"/>
+	</bean>
+	
+	<util:list id="list">
+		<value>Spring</value>
+		<value>Summer</value>
+		<value>Fall</value>
+		<value>Winter</value>
+	</util:list>
+	
+	<util:set id="set">
+		<value>Red</value>
+		<value>Orange</value>
+		<value>Blue</value>
+		<value>Purple</value>
+		<value>Rose</value>
+		<value>Green</value>
+	</util:set>
+	
+	<util:map id="map">
+		<entry key="Spain" value="Madrid"/>
+		<entry key="France" value="Paris"/>
+		<entry key="Germany" value="Berlin"/>
+		<entry key="Italy" value="Roma"/>
+		<entry key="United Kingdom" value="London"/>
+	</util:map>
+	
+	<util:properties id="properties">
+		<prop key="environment">Development</prop>
+		<prop key="max-connections">3</prop>
+		<prop key="protocol">HTTPS</prop>
+		<prop key="port">443</prop>
+	</util:properties>
+
+
+</beans>

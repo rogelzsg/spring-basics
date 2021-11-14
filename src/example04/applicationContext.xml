@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="fooBean" class="example04.FooBean">
+		<!-- To verify that the constructor is called before the setters,
+		we assign a previous value to the property03-->
+		<constructor-arg value="-1"/>
+		<!-- And now the setters (property 03 value will be override) -->
+		<property name="property01" value="injected value 1" />
+		<property name="property02" ref="property02val" />
+		<property name="property03">
+			<bean class="java.lang.Integer">
+				<constructor-arg value="1" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="property02val" class="java.lang.String">
+		<constructor-arg value="injected value 2" />
+	</bean>
+
+
+</beans>
