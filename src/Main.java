@@ -4,6 +4,9 @@ import example03.Example03;
 import example04.Example04;
 import example05.Example05;
 import example06.Example06;
+import example07.Example07;
+import example08.Example08;
+import example09.Example09;
 
 public class Main {
 
@@ -26,9 +29,17 @@ public class Main {
 		// Injection of collections, by nesting them
 		// new Example05().test();
 		
-		// Injection of collections, by referring them (requires a new XML Schema)
+		// Injection of collections, by referring them (requires an extra Spring XML Schema)
 		// new Example06().test();
 		
+		// Use of a properties file, first by getting its values separately, second as a whole entity
+		// new Example07().test();
+		
+		// init and destroy methods
+		// new Example08().test();
+		
+		// Singleton and Prototype scopes
+		new Example09().test();
 	}
 
 }

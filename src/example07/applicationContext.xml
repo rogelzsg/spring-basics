@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- We can use several prefixes to resolve the location:
+		classpath: , file: , http:
+	 -->
+	<context:property-placeholder location="classpath:example07/my-properties-file" />
+
+	<bean id="fooBean" class="example07.FooBean">
+	
+		<constructor-arg name="property01" value="${connection.protocol}" />
+		<constructor-arg name="property02" value="${connection.protocol.port}" />
+		
+		<!-- If we have a list, we must use the Spring Expression Language (SpEL) 
+		to transform a plain String into a String[] -->
+		<constructor-arg name="property03" value="#{'${seasons}'.split(',')}" />
+		
+		<!-- We can import this file as a Properties instance too -->
+		<constructor-arg name="property04">
+			<util:properties location="${file:example07/my-properties-file}" />
+		</constructor-arg>
+		
+	</bean>
+	
+
+</beans>

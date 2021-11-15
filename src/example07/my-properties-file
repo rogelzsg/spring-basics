@@ -1,0 +1,6 @@
+# Simple properties
+connection.protocol=SFTP
+connection.protocol.port=22
+
+# List
+seasons=Spring,Summer,Fall,Winter

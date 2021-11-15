@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Both methods are configured as node attributes 
+	The most important thing is to realize that they do not admit parameters.
+	That said, the access modifiers and the return types have no impact (the latter
+	won't never be catched).
+	In other words:
+	- startMe is public and returns void
+	- stopMe is private and returns a string
+	The behaviour is the same to both.
+	-->
+	<bean id="fooBean" class="example08.FooBean" init-method="startMe" destroy-method="stopMe" />
+
+</beans>
