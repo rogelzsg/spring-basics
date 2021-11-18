@@ -7,6 +7,9 @@ import example06.Example06;
 import example07.Example07;
 import example08.Example08;
 import example09.Example09;
+import example10.Example10;
+import example11.Example11;
+import example12.Example12;
 
 public class Main {
 
@@ -32,14 +35,26 @@ public class Main {
 		// Injection of collections, by referring them (requires an extra Spring XML Schema)
 		// new Example06().test();
 		
-		// Use of a properties file, first by getting its values separately, second as a whole entity
+		// Usage of a properties file, first by getting its values separately, second as a whole entity
 		// new Example07().test();
 		
 		// init and destroy methods
 		// new Example08().test();
 		
-		// Singleton and Prototype scopes
-		new Example09().test();
+		// Singleton anexample10d Prototype scopes
+		// new Example09().test();
+		
+		/***** Annotations block *****/
+		
+		// A single bean not defined in the XML, got by scanning its folder recursively
+		// new Example10().test();
+		
+		// Autowired to inject by a constructor, a setter and a custom method
+		// new Example11().test();
+	
+		// Two autowired properties of a same class, differenced thanks to their qualifiers
+		// new Example12().test();
+		
 	}
 
 }
