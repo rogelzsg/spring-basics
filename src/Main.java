@@ -10,12 +10,16 @@ import example09.Example09;
 import example10.Example10;
 import example11.Example11;
 import example12.Example12;
+import example13.Example13;
+import example14.Example14;
+import example15.Example15;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
 	
-		/***** XML Context block *****/
+		/***** XML Context *****/
 		
 		// Simple instantiation: one bean of a class
 		// new Example01().test();
@@ -44,16 +48,29 @@ public class Main {
 		// Singleton anexample10d Prototype scopes
 		// new Example09().test();
 		
-		/***** Annotations block *****/
+		
+		/***** XML Context + scanned Annotations *****/
 		
 		// A single bean not defined in the XML, got by scanning its folder recursively
 		// new Example10().test();
 		
-		// Autowired to inject by a constructor, a setter and a custom method
+		// Autowired through a constructor, a setter and a custom method
 		// new Example11().test();
 	
 		// Two autowired properties of a same class, differenced thanks to their qualifiers
 		// new Example12().test();
+		
+		// Scopes (Singleton and Prototype) with an annotation
+		// new Example13().test();
+		
+		// PreDestroy and PostConstruct (requires javax.annotation lib for Java 9+)
+		// new Example14().test();
+		
+		
+		/***** Config class + scanned Annotations *****/
+		
+		// Usage of plain class as the context
+		// new Example15().test();
 		
 	}
 
